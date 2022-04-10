@@ -1,19 +1,45 @@
 plugins {
-    id 'java'
+    id 'java-library'
 }
 
-group 'com.test.astraia'
-version '1.0-SNAPSHOT'
+sourceCompatibility = 12
+targetCompatibility = 12
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+//sourceSets.main.java.srcDirs "src/generated-sources/jaxb"
+
+configurations {
+    jaxb
 }
 
-test {
-    useJUnitPlatform()
+dependencies {
+    jaxb (
+            'com.sun.xml.bind:jaxb-xjc:2.3.1',
+            'com.sun.xml.bind:jaxb-impl:2.3.1',
+            'org.glassfish.jaxb:jaxb-runtime:2.3.3'
+    )
 }
+
+task jaxb {
+    System.setProperty('javax.xml.accessExternalSchema', 'all')
+    def jaxbTargetDir = file("build/generated/jaxb")
+    doLast {
+        jaxbTargetDir.mkdirs()
+        ant.taskdef(
+                name: 'xjc',
+                classname: 'com.sun.tools.xjc.XJCTask',
+                classpath: configurations.jaxb.asPath
+        )
+        ant.jaxbTargetDir = jaxbTargetDir
+        ant.xjc(
+                destdir: '${jaxbTargetDir}',
+                package: 'com.roytuts.jaxb',
+                schema: 'src/main/resources/xsd/report.xsd'
+        )
+    }
+}
+
+compileJava.dependsOn jaxb
