@@ -1,5 +1,6 @@
 package com.test.astraia;
 
+import com.test.astraia.file.FileReader;
 import com.test.astraia.model.xsd.Report;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

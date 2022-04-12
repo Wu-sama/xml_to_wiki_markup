@@ -1,12 +1,12 @@
 package com.test.astraia;
 
+import com.test.astraia.file.FileWriter;
 import org.junit.jupiter.api.Test;
 
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.Files;
 
 import static org.junit.jupiter.api.Assertions.*;
 

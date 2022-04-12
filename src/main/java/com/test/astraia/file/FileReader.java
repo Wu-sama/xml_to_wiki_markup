@@ -1,4 +1,4 @@
-package com.test.astraia;
+package com.test.astraia.file;
 
 import com.test.astraia.model.xsd.Report;
 

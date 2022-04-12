@@ -1,4 +1,4 @@
-package com.test.astraia;
+package com.test.astraia.file;
 
 import java.io.BufferedOutputStream;
 import java.io.DataOutputStream;

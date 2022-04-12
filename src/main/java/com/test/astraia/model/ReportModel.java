@@ -1,7 +1,8 @@
 package com.test.astraia.model;
 
 import java.util.LinkedHashSet;
-import java.util.stream.Collectors;
+
+import static com.test.astraia.FormattingUtils.collectionToString;
 
 public class ReportModel {
     private LinkedHashSet<Object> content;
@@ -23,7 +24,6 @@ public class ReportModel {
 
     @Override
     public String toString() {
-        return content.stream().map(Object::toString)
-                .collect(Collectors.joining(Constants.DELIMITER));
+        return collectionToString(content);
     }
 }
