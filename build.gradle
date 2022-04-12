@@ -1,6 +1,14 @@
 plugins {
     id 'java-library'
+//    id 'idea'
 }
+
+//idea {
+//    module {
+//        sourceDirs += file('build/generated/jaxb')
+//        generatedSourceDirs += file('build/generated/jaxb')
+//    }
+//}
 
 sourceCompatibility = 12
 targetCompatibility = 12
@@ -9,7 +17,7 @@ repositories {
     mavenCentral()
 }
 
-//sourceSets.main.java.srcDirs "src/generated-sources/jaxb"
+sourceSets.main.java.srcDirs "build/generated/jaxb"
 
 configurations {
     jaxb
@@ -21,6 +29,14 @@ dependencies {
             'com.sun.xml.bind:jaxb-impl:2.3.1',
             'org.glassfish.jaxb:jaxb-runtime:2.3.3'
     )
+
+    // JAX-B dependencies for JDK 9+
+    implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
+    implementation "org.glassfish.jaxb:jaxb-runtime:2.3.2"
+
+    // Test
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2")
 }
 
 task jaxb {
@@ -36,10 +52,12 @@ task jaxb {
         ant.jaxbTargetDir = jaxbTargetDir
         ant.xjc(
                 destdir: '${jaxbTargetDir}',
-                package: 'com.roytuts.jaxb',
+                package: 'com.test.astraia.model.xsd',
                 schema: 'src/main/resources/xsd/report.xsd'
         )
     }
 }
-
+test {
+    useJUnitPlatform()
+}
 compileJava.dependsOn jaxb
