@@ -15,6 +15,17 @@ public class SectionModel {
         this.content = content;
     }
 
+    public void addContent(Object object) {
+        if (content == null) {
+            this.content = new LinkedHashSet<Object>();
+        }
+        content.add(object);
+    }
+
+    public void setHeading(int order, String heading) {
+        this.heading = new Heading(heading, order);
+    }
+
     @Override
     public String toString() {
         return heading.toString() + "\n" + content.stream().map(Object::toString)

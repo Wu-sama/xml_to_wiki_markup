@@ -4,24 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22acdeaa-5d4c-4e41-b7fa-32eefeabaf7d" name="Changes" comment="create classes from xsd">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/FileReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/FileWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/Bold.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/Heading.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/Italic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/ReportModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/SectionModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/test/astraia/FileReaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/test/astraia/FileWriterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+    <list default="true" id="22acdeaa-5d4c-4e41-b7fa-32eefeabaf7d" name="Changes" comment="inner model structure">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/ItalicModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/service/ReportMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/Bold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/BoldModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/Heading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/Heading.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/Italic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/SectionModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/SectionModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,7 +276,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649610629631</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="create classes from xsd">
+      <created>1649789562107</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1649789562107</updated>
+    </task>
+    <task id="LOCAL-00005" summary="inner model structure">
+      <created>1649790043882</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1649790043882</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -304,19 +308,20 @@
     <MESSAGE value="init commit" />
     <MESSAGE value="git ignore" />
     <MESSAGE value="create classes from xsd" />
-    <option name="LAST_COMMIT_MESSAGE" value="create classes from xsd" />
+    <MESSAGE value="inner model structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="inner model structure" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/test/astraia/FileReaderTest.java</url>
-          <line>17</line>
+          <line>18</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/test/astraia/FileReaderTest.java</url>
-          <line>26</line>
+          <line>27</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
