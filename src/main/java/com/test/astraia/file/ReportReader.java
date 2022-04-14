@@ -7,7 +7,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
 
-public class FileReader {
+public class ReportReader {
     public Report readFile(String path) throws JAXBException {
         JAXBContext jaxbContext = JAXBContext.newInstance(Report.class);
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();

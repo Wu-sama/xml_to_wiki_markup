@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22acdeaa-5d4c-4e41-b7fa-32eefeabaf7d" name="Changes" comment="inner model structure">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/ItalicModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/service/ReportMapper.java" afterDir="false" />
+    <list default="true" id="22acdeaa-5d4c-4e41-b7fa-32eefeabaf7d" name="Changes" comment="read new file from directory">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/file/FileAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/file/FileEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/file/FileListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/file/ReportWatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/test/astraia/file/ReportWatcherTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/Bold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/BoldModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/Heading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/Heading.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/Italic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/SectionModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/model/SectionModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/astraia/AstraiaTestReportApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/AstraiaTestReportApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/astraia/file/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/file/ReportReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/astraia/file/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/file/ReportWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/test/astraia/FileReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/test/astraia/file/FileReaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/test/astraia/FileWriterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/test/astraia/file/ReportWriterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +111,9 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
@@ -124,30 +134,7 @@
       <recent name="com.test.astraia" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.FileWriterTest.write">
-    <configuration name="FileReaderTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.test.astraia.FileReaderTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.ReportWriterTest.write">
     <configuration name="FileReaderTest.readFile" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -194,55 +181,82 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="astraia [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReportWatcherTest.createFile" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.test.astraia.file.ReportWatcherTest.createFile&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="astraia [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ReportWatcherTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="clean" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.test.astraia.file.ReportWatcherTest.test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ReportWriterTest.write" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.test.astraia.file.ReportWriterTest.write&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ReportWriterTest.write" />
+        <item itemvalue="Gradle.ReportWatcherTest.test" />
+        <item itemvalue="Gradle.ReportWatcherTest.createFile" />
         <item itemvalue="Gradle.FileWriterTest.write" />
         <item itemvalue="Gradle.FileReaderTest.readFile" />
-        <item itemvalue="Gradle.FileReaderTest" />
-        <item itemvalue="Gradle.astraia [build]" />
-        <item itemvalue="Gradle.astraia [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -290,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649790043882</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="to wiki format">
+      <created>1649882366149</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1649882366149</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -309,20 +330,32 @@
     <MESSAGE value="git ignore" />
     <MESSAGE value="create classes from xsd" />
     <MESSAGE value="inner model structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="inner model structure" />
+    <MESSAGE value="to wiki format" />
+    <MESSAGE value="read new file from directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="read new file from directory" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/test/astraia/FileReaderTest.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/com/test/astraia/file/FileReaderTest.java</url>
           <line>18</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/test/astraia/FileReaderTest.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/com/test/astraia/file/FileReaderTest.java</url>
           <line>27</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/test/astraia/file/ReportWatcherTest.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/test/astraia/file/ReportWatcherTest.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,6 +1,5 @@
-package com.test.astraia;
+package com.test.astraia.file;
 
-import com.test.astraia.file.FileWriter;
 import org.junit.jupiter.api.Test;
 
 import java.io.DataInputStream;
@@ -10,8 +9,8 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FileWriterTest {
-    private FileWriter writer = new FileWriter();
+class ReportWriterTest {
+    private final ReportWriter writer = new ReportWriter();
 
     @Test
     void write() throws IOException {
@@ -27,7 +26,7 @@ class FileWriterTest {
         reader.close();
 
         assertEquals(example1, result);
-        file.delete();
+        file.delete(); //todo fina the reasons why do not delete file
     }
 
     private String getContent() {

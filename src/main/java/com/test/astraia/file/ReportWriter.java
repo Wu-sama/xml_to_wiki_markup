@@ -1,18 +1,15 @@
 package com.test.astraia.file;
 
-import java.io.BufferedOutputStream;
-import java.io.DataOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileWriter {
+public class ReportWriter {
     public File write(String fileName, String content) throws IOException {
         File file = createFile(fileName);
-        FileOutputStream fos = new FileOutputStream(file.getName());
-        DataOutputStream outStream = new DataOutputStream(new BufferedOutputStream(fos));
-        outStream.writeUTF(content);
-        outStream.close();
+        try (FileWriter writer = new FileWriter(file)) {
+            writer.write(content);
+        }
         return file;
     }
 
