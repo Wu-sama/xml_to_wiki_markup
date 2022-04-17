@@ -1,15 +1,17 @@
 package com.test.astraia.file;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Collections;
 
 public class ReportWriter {
-    public File write(String fileName, String content) throws IOException {
-        File file = createFile(fileName);
-        try (FileWriter writer = new FileWriter(file)) {
-            writer.write(content);
-        }
+    public Path write(String fileName, String content) throws IOException {
+        Path file = Paths.get(fileName);
+        Files.write(file, Collections.singleton(content), StandardCharsets.UTF_8);
         return file;
     }
 

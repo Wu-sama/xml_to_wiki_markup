@@ -6,6 +6,8 @@ import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,16 +19,13 @@ class ReportWriterTest {
         String example1 = getContent();
 
         String path = "src/test/resources/example1.wiki";
-        File file = writer.write(path,example1);
+        Files.deleteIfExists(Path.of(path));
+        Path file = writer.write(path,example1);
 
-        String result;
-        FileInputStream fis = new FileInputStream(path);
-        DataInputStream reader = new DataInputStream(fis);
-        result = reader.readUTF();
-        reader.close();
+        String result= Files.readString(file);
 
-        assertEquals(example1, result);
-        file.delete(); //todo fina the reasons why do not delete file
+        assertEquals(example1+"\n", result);
+        Files.deleteIfExists(file);
     }
 
     private String getContent() {
@@ -45,6 +44,6 @@ class ReportWriterTest {
                 "=====JUnits=====\n" +
                 "======com.astraia.api.data======\n" +
                 "'''Passed:''' All passed!\n" +
-                "'''Failed:''' None\n";
+                "'''Failed:''' None";
     }
 }
