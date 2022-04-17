@@ -35,7 +35,7 @@ public class ReportWatcher implements Runnable {
     public void run() {
         try (WatchService watchService = FileSystems.getDefault().newWatchService()) {
             Path path = Paths.get(folder.getAbsolutePath());
-            path.register(watchService, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_MODIFY, StandardWatchEventKinds.ENTRY_DELETE);
+            path.register(watchService, StandardWatchEventKinds.ENTRY_CREATE);
             watchServices.add(watchService);
             boolean poll = true;
             while (poll) {
@@ -63,14 +63,6 @@ public class ReportWatcher implements Runnable {
             }
             if (file.isDirectory()) {
                 new ReportWatcher(file).setListeners(listeners).watch();
-            }
-        } else if (kind == StandardWatchEventKinds.ENTRY_MODIFY) {
-            for (FileListener listener : listeners) {
-                listener.onModified(event);
-            }
-        } else if (kind == StandardWatchEventKinds.ENTRY_DELETE) {
-            for (FileListener listener : listeners) {
-                listener.onDeleted(event);
             }
         }
     }

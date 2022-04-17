@@ -8,9 +8,19 @@ import javax.xml.bind.Unmarshaller;
 import java.io.File;
 
 public class ReportReader {
-    public Report readFile(String path) throws JAXBException {
-        JAXBContext jaxbContext = JAXBContext.newInstance(Report.class);
-        Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-        return (Report) jaxbUnmarshaller.unmarshal(new File(path));
+    static final JAXBContext context = initContext();
+
+    private static JAXBContext initContext() {
+        try {
+            return JAXBContext.newInstance(Report.class);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Report readFile(File file) throws JAXBException {
+        Unmarshaller unmarshaller = context.createUnmarshaller();
+        return (Report) unmarshaller.unmarshal(file);
     }
 }

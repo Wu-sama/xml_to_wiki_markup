@@ -22,29 +22,21 @@ public class ReportWatcherTest {
     // 3.добавили ксмл файл но не с репорт внутри
 
     private static ReportWatcher watcher;
-    private static File folder = new File("src/test/resources");
+    private static final File folder = new File("src/test/resources");
     private final static Map<String, String> map = new HashMap<>();
 
     @BeforeAll
     private static void watch(){
         watcher = new ReportWatcher(folder);
-        watcher.addListener(new FileAdapter() {
+        watcher.addListener(new FileListener() {
             public void onCreated(FileEvent event) {
                 map.put("file.created", event.getFile().getName());
-            }
-
-            public void onModified(FileEvent event) {
-                map.put("file.modified", event.getFile().getName());
-            }
-
-            public void onDeleted(FileEvent event) {
-                map.put("file.deleted", event.getFile().getName());
             }
         }).watch();
     }
 
     @Test
-    public void test() throws IOException, InterruptedException {
+    public void successReadCreated() throws IOException, InterruptedException {
         File file = new File(folder, "test.txt");
         try (FileWriter writer = new FileWriter(file)) {
             writer.write("Some String");
