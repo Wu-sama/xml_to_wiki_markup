@@ -12,7 +12,7 @@ public class ItalicModel {
 
     @Override
     public String toString() {
-        return BRACE_CHARACTER + collectionToString(content);
+        return BRACE_CHARACTER + collectionToString(content, "") + BRACE_CHARACTER ;
     }
 
     public void addContent(Object object) {

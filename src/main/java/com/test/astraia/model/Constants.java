@@ -1,5 +1,5 @@
 package com.test.astraia.model;
 
 public class Constants {
-    public static String DELIMITER = "\n";
+    public static String LINE_DELIMITER = "\n";
 }

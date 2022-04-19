@@ -32,7 +32,8 @@ public class ReportMapper {
 
     private Object mapToModel(int order, Object obj) {
         if (obj instanceof String) {
-            return obj.toString().replaceAll("([\\r\\n\\t])", "");
+            String result = obj.toString().replaceAll("([\\r\\n\\t])", "");
+            return result.isEmpty() ? null : result;
         } else if (obj instanceof Section) {
             return getSectionModel(order, (Section) obj);
         } else if (obj instanceof Italic) {
@@ -58,7 +59,7 @@ public class ReportMapper {
     private SectionModel getSectionModel(int order, Section section) {
         SectionModel result = new SectionModel();
         result.setHeading(order, section.getHeading());
-        result.setContent(getContent(order++, section.getContent()));
+        result.setContent(getContent(++order, section.getContent()));
         return result;
     }
 }

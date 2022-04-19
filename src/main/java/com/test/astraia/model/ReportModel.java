@@ -1,7 +1,6 @@
 package com.test.astraia.model;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
 
 import static com.test.astraia.FormattingUtils.collectionToString;
@@ -26,6 +25,6 @@ public class ReportModel {
 
     @Override
     public String toString() {
-        return collectionToString(content);
+        return collectionToString(content, Constants.LINE_DELIMITER);
     }
 }

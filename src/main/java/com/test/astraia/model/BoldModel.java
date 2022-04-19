@@ -11,7 +11,7 @@ public class BoldModel {
 
     @Override
     public String toString() {
-        return BRACE_CHARACTER + collectionToString(content);
+        return BRACE_CHARACTER + collectionToString(content, "") + BRACE_CHARACTER;
     }
 
     public void setContent(List<Object> content) {

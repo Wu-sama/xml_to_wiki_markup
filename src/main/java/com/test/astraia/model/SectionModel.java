@@ -33,10 +33,10 @@ public class SectionModel {
         StringBuilder builder = new StringBuilder();
         if (heading != null) {
             builder.append(heading);
-            builder.append("\n");
         }
         if (content != null) {
-            builder.append(collectionToString(content));
+            builder.append("\n");
+            builder.append(collectionToString(content,""));
         }
         return builder.toString();
     }
