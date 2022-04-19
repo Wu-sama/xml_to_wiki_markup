@@ -18,9 +18,9 @@ class ReportWriterTest {
     void write() throws IOException {
         String example1 = getContent();
 
-        String path = "src/test/resources/example1.wiki";
+        String path = "src/test/resources";
         Files.deleteIfExists(Path.of(path));
-        Path file = writer.write(path,example1);
+        Path file = writer.write(path,"example1.wiki", example1);
 
         String result= Files.readString(file);
 

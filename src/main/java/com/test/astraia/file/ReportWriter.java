@@ -9,8 +9,8 @@ import java.nio.file.Paths;
 import java.util.Collections;
 
 public class ReportWriter {
-    public Path write(String fileName, String content) throws IOException {
-        Path file = Paths.get(fileName);
+    public Path write(String path, String fileName, String content) throws IOException {
+        Path file = Paths.get(path, fileName);
         Files.write(file, Collections.singleton(content), StandardCharsets.UTF_8);
         return file;
     }

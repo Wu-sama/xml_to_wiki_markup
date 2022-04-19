@@ -11,7 +11,7 @@ class ReportServiceTest {
 
     @BeforeAll
     static void init(){
-        ReportService.setOutputFolderPath("src/test/resources/examples/output");
+        ReportService.setOutputFolderPath("src/test/resources/examples/output/");
     }
 
     @Test

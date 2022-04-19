@@ -9,23 +9,21 @@ import java.io.File;
 import java.io.IOException;
 
 public class ReportService {
-    private static WikiReportService watchService = new WikiReportService();
-    private static ReportReader reader = new ReportReader();
-    private static ReportWriter writer = new ReportWriter();
+    private final WikiReportService watchService = new WikiReportService();
+    private final ReportReader reader = new ReportReader();
+    private final ReportWriter writer = new ReportWriter();
     private static String outputFolderPath;
 
-    public static void setOutputFolderPath(String outputFolderPath) {
-        outputFolderPath = outputFolderPath;
+    public static void setOutputFolderPath(String outputFolder) {
+        outputFolderPath = outputFolder;
     }
 
     public void formatReport(File file){
         try {
             Report report = reader.readFile(file);
             String wikiReport = watchService.toWikiFormat(report);
-            writer.write(outputFolderPath, wikiReport);
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+            writer.write(outputFolderPath, file.getName().replaceAll(".xml|.XML", ".wiki"), wikiReport);
+        } catch (JAXBException | IOException e) {
             e.printStackTrace();
         }
     }
