@@ -5,26 +5,14 @@ import com.test.astraia.file.ReportWatcher;
 import com.test.astraia.service.ReportService;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class AstraiaTestReportApp {
-    public static void main(String[] args) throws IOException, InterruptedException {
-        Scanner scanner = null;
-        try {
-            scanner = new Scanner(System.in);
-            String inputFolder = "";
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            String inputFolder = getFolderPath(scanner, "input");
+            String outputFolder = getFolderPath(scanner, "output");
 
-            while (inputFolder.isBlank()){
-                System.out.print("Please enter input folder location: ");
-                inputFolder = scanner.next();
-            }
-
-            String outputFolder = "";
-            while (outputFolder.isBlank()){
-                System.out.print("Please enter output folder location: ");
-                outputFolder = scanner.next();
-            }
             ReportService.setOutputFolderPath(outputFolder);
 
             File folder = new File(inputFolder);
@@ -32,11 +20,18 @@ public class AstraiaTestReportApp {
             watcher.addListener(new ReportListener()).watch();
 
             System.out.print("For end input exit");
-            while(!"exit".equals(scanner.next())){}
-            return;
-        } finally {
-            if (scanner != null)
-                scanner.close();
+            while (!"exit".equals(scanner.next())) {
+            }
         }
+    }
+
+    private static String getFolderPath(Scanner scanner, String folderType) {
+        String folder = "";
+
+        while (folder.isBlank()){
+            System.out.print("Please enter "+folderType+" folder location: ");
+            folder = scanner.next();
+        }
+        return folder;
     }
 }

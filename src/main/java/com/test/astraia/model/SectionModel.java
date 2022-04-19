@@ -1,23 +1,25 @@
 package com.test.astraia.model;
 
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class SectionModel {
-    private LinkedHashSet<Object> content;
+    private List<Object> content;
     private Heading heading;
 
-    public LinkedHashSet<Object> getContent() {
+    public List<Object> getContent() {
         return content;
     }
 
-    public void setContent(LinkedHashSet<Object> content) {
+    public void setContent(List<Object> content) {
         this.content = content;
     }
 
     public void addContent(Object object) {
         if (content == null) {
-            this.content = new LinkedHashSet<Object>();
+            this.content = new ArrayList<>();
         }
         content.add(object);
     }
