@@ -5,6 +5,7 @@ import com.test.astraia.file.ReportWriter;
 import com.test.astraia.model.xsd.Report;
 
 import javax.xml.bind.JAXBException;
+import javax.xml.stream.XMLStreamException;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -24,7 +25,7 @@ public class ReportService {
             Report report = reader.readFile(file);
             String wikiReport = watchService.toWikiFormat(report);
             return writer.write(outputFolderPath, file.getName().replaceAll(".xml|.XML", ".wiki"), wikiReport);
-        } catch (JAXBException | IOException e) {
+        } catch (JAXBException | IOException | XMLStreamException e) {
             e.printStackTrace();
         }
         return null;
