@@ -1,9 +1,9 @@
 package com.test.astraia.model;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.stream.Collectors;
+
+import static com.test.astraia.FormattingUtils.collectionToString;
 
 public class SectionModel {
     private List<Object> content;
@@ -30,7 +30,14 @@ public class SectionModel {
 
     @Override
     public String toString() {
-        return heading.toString() + "\n" + content.stream().map(Object::toString)
-                .collect(Collectors.joining(Constants.DELIMITER));
+        StringBuilder builder = new StringBuilder();
+        if (heading != null) {
+            builder.append(heading);
+            builder.append("\n");
+        }
+        if (content != null) {
+            builder.append(collectionToString(content));
+        }
+        return builder.toString();
     }
 }
