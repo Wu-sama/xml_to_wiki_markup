@@ -1,26 +1,42 @@
 package com.test.astraia;
 
+import com.test.astraia.file.ReportListener;
+import com.test.astraia.file.ReportWatcher;
+import com.test.astraia.service.ReportService;
+
+import java.io.File;
 import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardWatchEventKinds;
-import java.nio.file.WatchEvent;
-import java.nio.file.WatchKey;
-import java.nio.file.WatchService;
+import java.util.Scanner;
 
 public class AstraiaTestReportApp {
     public static void main(String[] args) throws IOException, InterruptedException {
-        WatchService watchService = FileSystems.getDefault().newWatchService();
-        Path path = Paths.get(System.getProperty("user.home"));
-        path.register(watchService, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_DELETE, StandardWatchEventKinds.ENTRY_MODIFY);
-        WatchKey key;
-        while ((key = watchService.take()) != null) {
-            for (WatchEvent<?> event : key.pollEvents()) {
-                System.out.println("Event kind:" + event.kind() + ". File affected: " + event.context() + ".");
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(System.in);
+            String inputFolder = "";
+
+            while (inputFolder.isBlank()){
+                System.out.print("Please enter input folder location: ");
+                inputFolder = scanner.next();
             }
-            key.reset();
+
+            String outputFolder = "";
+            while (outputFolder.isBlank()){
+                System.out.print("Please enter output folder location: ");
+                outputFolder = scanner.next();
+            }
+            ReportService.setOutputFolderPath(outputFolder);
+
+            File folder = new File(inputFolder);
+            ReportWatcher watcher = new ReportWatcher(folder);
+            watcher.addListener(new ReportListener()).watch();
+
+            System.out.print("For end input exit");
+            while(!"exit".equals(scanner.next())){}
+            return;
+        } finally {
+            if (scanner != null)
+                scanner.close();
         }
-        watchService.close();
     }
 }
