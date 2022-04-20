@@ -3,7 +3,7 @@ package com.test.astraia.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.test.astraia.FormattingUtils.collectionToString;
+import static com.test.astraia.utils.FormattingUtils.collectionToString;
 
 public class ItalicModel {
     private static final String BRACE_CHARACTER = "''";

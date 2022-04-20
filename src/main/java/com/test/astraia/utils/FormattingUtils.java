@@ -1,4 +1,4 @@
-package com.test.astraia;
+package com.test.astraia.utils;
 
 import java.util.List;
 import java.util.stream.Collectors;
