@@ -2,9 +2,6 @@ package com.test.astraia.file;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -18,15 +15,33 @@ class ReportWriterTest {
     void write() throws IOException {
         String example1 = getContent();
 
-        String path = "src/test/resources";
-        Files.deleteIfExists(Path.of(path));
-        Path file = writer.write(path,"example1.wiki", example1);
+        String path = "src/test/resources/";
+        String fileName= "example1.wiki";
+        Files.deleteIfExists(Path.of(path+fileName));
+        Path file = writer.write(path,fileName, example1);
 
         String result= Files.readString(file);
 
         assertEquals(example1+"\n", result);
         Files.deleteIfExists(file);
     }
+
+    @Test
+    void rewriteFile() throws IOException {
+        String content = "New content";
+
+        String path = "src/test/resources/files/";
+        String fileName = "alreadyExist.txt";
+        writer.write(path,fileName, "oldContent");
+
+        Path file = writer.write(path,fileName, content);
+
+        String result= Files.readString(file);
+        Files.deleteIfExists(file);
+
+        assertEquals(content+"\n", result);
+    }
+
 
     private String getContent() {
         return "The text can start outside a section....\n" +

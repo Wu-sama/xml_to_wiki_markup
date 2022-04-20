@@ -4,7 +4,6 @@ import com.test.astraia.model.xsd.Report;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.stream.StreamFilter;
 import javax.xml.stream.XMLInputFactory;
