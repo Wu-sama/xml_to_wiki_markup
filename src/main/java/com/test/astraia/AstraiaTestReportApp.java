@@ -25,8 +25,7 @@ public class AstraiaTestReportApp {
             configureReportCreationWatcher(folder, reportAdapter);
 
             System.out.print("For end input exit");
-            while (!"exit".equals(scanner.next())) {
-            }
+            while (!"exit".equals(scanner.next())) {}
         }
     }
 
@@ -43,7 +42,7 @@ public class AstraiaTestReportApp {
 
     private static void configureReportCreationWatcher(File folder, ReportAdapter reportAdapter) {
         ReportWatcher watcher = new ReportWatcher(folder);
-        watcher.addListener(new ReportAdapter()).watch();
+        watcher.addListener(reportAdapter).watch();
     }
 
     private static String getFolderPath(Scanner scanner, String folderType) {
