@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
@@ -25,7 +26,8 @@ public class AstraiaTestReportApp {
             configureReportCreationWatcher(folder, reportAdapter);
 
             System.out.print("For end input exit");
-            while (!"exit".equals(scanner.next())) {}
+            while (!"exit".equals(scanner.next())) {
+            }
         }
     }
 
@@ -36,7 +38,7 @@ public class AstraiaTestReportApp {
                     .filter(Files::isRegularFile)
                     .forEach(reportAdapter::onCreated);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Exception during an attempt to read all files from a folder " + folder.getAbsolutePath() + " : " + e.getMessage());
         }
     }
 
@@ -47,11 +49,29 @@ public class AstraiaTestReportApp {
 
     private static String getFolderPath(Scanner scanner, String folderType) {
         String folder = "";
+        boolean isValidPath = false;
 
-        while (folder.isBlank()){
-            System.out.print("Please enter "+folderType+" folder location: ");
+        while (folder.isBlank() || isValidPath) {
+            System.out.print("Please enter " + folderType + " folder location: ");
             folder = scanner.next();
+            isValidPath = isValidPath(folder);
         }
         return folder;
+    }
+
+    private static boolean isValidPath(String folder) {
+        if (!folder.isBlank()) {
+            try {
+                Path path = Paths.get(folder);
+                if (Files.isDirectory(path)) {
+                    return true;
+                } else {
+                    System.out.println("Entered path is not a folder.");
+                }
+            } catch (Exception e) {
+                System.out.println("Wrong folder path: " + e.getMessage());
+            }
+        }
+        return false;
     }
 }

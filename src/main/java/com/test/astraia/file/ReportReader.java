@@ -19,7 +19,7 @@ public class ReportReader {
         try {
             return JAXBContext.newInstance(Report.class);
         } catch (JAXBException e) {
-            e.printStackTrace();
+            System.out.println("Impossible to create JAXBContext. Reason: " + e.getMessage());
             throw new RuntimeException(e);
         }
     }

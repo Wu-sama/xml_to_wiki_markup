@@ -26,7 +26,7 @@ public class ReportService {
             String wikiReport = watchService.toWikiFormat(report);
             return writer.write(outputFolderPath, file.getName().replaceAll(".xml|.XML", ".wiki"), wikiReport);
         } catch (JAXBException | IOException | XMLStreamException e) {
-            e.printStackTrace();
+            System.out.println("An attempt to format report is failed. Cause: " + e.getMessage());
         }
         return null;
     }
