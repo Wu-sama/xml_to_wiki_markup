@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,6 +27,9 @@ public class ReportWatcherTest {
         watcher.addListener(new FileListener() {
             public void onCreated(FileEvent event) {
                 map.put("file.created", event.getFile().getName());
+            }
+            public void onCreated(Path path) {
+                map.put("file.created", path.toString());
             }
         }).watch();
     }
