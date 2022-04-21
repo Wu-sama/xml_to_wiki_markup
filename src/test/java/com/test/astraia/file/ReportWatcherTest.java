@@ -40,7 +40,7 @@ public class ReportWatcherTest {
         try (FileWriter writer = new FileWriter(file)) {
             writer.write("Some String");
         }
-        wait(10000);
+        wait(15000);
         file.delete();
         wait(2000);
         Assertions.assertEquals(file.getName(), map.get("file.created"));

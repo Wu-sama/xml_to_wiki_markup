@@ -12,7 +12,7 @@ class FileReaderTest {
     private final ReportReader reportReader =  new ReportReader();
 
     @Test
-    public void readFile() throws JAXBException, XMLStreamException {
+    public void readFile() throws XMLStreamException, JAXBException {
         String filePath = "BuildReportTask/examples/example1/example1.xml";
         File file = new File(filePath);
         Report report = reportReader.readFile(file);
@@ -25,7 +25,6 @@ class FileReaderTest {
         String filePath = "BuildReportTask/examples/example2/example2.xml";
         File file = new File(filePath);
         Report report = reportReader.readFile(file);
-
         Assertions.assertNotNull(report);
     }
 }

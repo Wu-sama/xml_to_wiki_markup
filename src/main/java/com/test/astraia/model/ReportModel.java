@@ -1,9 +1,9 @@
 package com.test.astraia.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.test.astraia.utils.FormattingUtils.collectionToString;
+import static com.test.astraia.utils.FormattingUtils.reduceNewLines;
 
 public class ReportModel {
     private List<Object> content;
@@ -18,6 +18,10 @@ public class ReportModel {
 
     @Override
     public String toString() {
-        return collectionToString(content, Constants.LINE_DELIMITER).replaceAll("\n\n\n|\n\n", "\n");
+        String result = reduceNewLines(collectionToString(content, Constants.LINE_DELIMITER));
+        if("\n".equals(result.substring(0,1))){
+            result =  result.substring(1);
+        }
+        return result;
     }
 }

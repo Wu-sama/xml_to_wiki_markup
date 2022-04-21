@@ -1,5 +1,7 @@
 package com.test.astraia.model;
 
+import com.test.astraia.utils.FormattingUtils;
+
 import java.util.List;
 
 public class SectionModel {
@@ -34,6 +36,6 @@ public class SectionModel {
                 builder.append(content.get(i).toString());
             }
         }
-        return builder.toString();
+        return FormattingUtils.reduceNewLines(builder.toString());
     }
 }

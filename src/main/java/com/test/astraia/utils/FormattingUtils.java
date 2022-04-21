@@ -14,4 +14,11 @@ public class FormattingUtils {
         }
         return "";
     }
+
+    public static String reduceNewLines(String str){
+        if(str == null){
+            return "";
+        }
+        return str.replaceAll("\n\n\n|\n\n", "\n");
+    }
 }

@@ -22,7 +22,7 @@ class WikiReportServiceTest {
     }
 
     @Test
-    void toWikiFormatEmotyReport() {
+    void toWikiFormatEmptyReport() {
         Report report = new Report();
 
         String result = service.toWikiFormat(report);
@@ -34,10 +34,12 @@ class WikiReportServiceTest {
     void toWikiFormatCheckHeaders() {
         String result = service.toWikiFormat(getReportWithTwoSections());
 
-        Assertions.assertEquals("=Heading 1=\n" +
-                "==Heading 2==\n" +
-                "=Heading 1=\n" +
-                "==Heading 2==\n"
+        Assertions.assertEquals("""
+                        =Heading 1=
+                        ==Heading 2==
+                        =Heading 1=
+                        ==Heading 2==
+                        """
                 , result);
     }
 
