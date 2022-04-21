@@ -3,8 +3,8 @@ package com.test.astraia.service;
 import com.test.astraia.file.ReportReader;
 import com.test.astraia.file.ReportWriter;
 import com.test.astraia.model.xsd.Report;
+import jakarta.xml.bind.JAXBException;
 
-import javax.xml.bind.JAXBException;
 import javax.xml.stream.XMLStreamException;
 import java.io.File;
 import java.io.IOException;

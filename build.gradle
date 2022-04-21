@@ -14,14 +14,14 @@ configurations {
 
 dependencies {
     jaxb(
-            'com.sun.xml.bind:jaxb-xjc:2.3.1',
-            'com.sun.xml.bind:jaxb-impl:2.3.1',
-            'org.glassfish.jaxb:jaxb-runtime:2.3.3'
+            'com.sun.xml.bind:jaxb-xjc:3.0.2',
+            'com.sun.xml.bind:jaxb-impl:3.0.2',
+            'org.glassfish.jaxb:jaxb-runtime:3.0.2'
     )
 
     // JAX-B dependencies for JDK 9+
-    implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
-    implementation "org.glassfish.jaxb:jaxb-runtime:2.3.2"
+    implementation "jakarta.xml.bind:jakarta.xml.bind-api:3.0.1"
+    implementation "org.glassfish.jaxb:jaxb-runtime:3.0.2"
 
     // Test
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")

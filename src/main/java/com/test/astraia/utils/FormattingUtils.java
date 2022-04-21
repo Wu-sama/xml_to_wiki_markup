@@ -7,10 +7,10 @@ public class FormattingUtils {
     private FormattingUtils() {
     }
 
-    public static String collectionToString(List content, String delimiter) {
+    public static String collectionToString(List<Object> content, String delimiter) {
         if (content != null) {
             return content.stream().map(Object::toString)
-                    .collect(Collectors.joining(delimiter)).toString();
+                    .collect(Collectors.joining(delimiter));
         }
         return "";
     }

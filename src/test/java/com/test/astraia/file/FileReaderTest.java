@@ -1,10 +1,10 @@
 package com.test.astraia.file;
 
 import com.test.astraia.model.xsd.Report;
+import jakarta.xml.bind.JAXBException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import javax.xml.bind.JAXBException;
 import javax.xml.stream.XMLStreamException;
 import java.io.File;
 
