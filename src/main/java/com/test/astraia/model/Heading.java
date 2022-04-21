@@ -1,9 +1,8 @@
 package com.test.astraia.model;
 
-// todo maybe move to inner private class
 public class Heading {
-    private String heading;
-    private int order = 1;
+    private final String heading;
+    private int order;
     private static String BRACE_CHARACTER = "=";
 
     public Heading(String heading, int order) {

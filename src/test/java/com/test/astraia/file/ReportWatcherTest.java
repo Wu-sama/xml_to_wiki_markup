@@ -12,10 +12,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ReportWatcherTest {
-    //todo
-    // 1. добавили не ксмл файл
-    // 2. пустой файл с расширение ксмл
-    // 3.добавили ксмл файл но не с репорт внутри
 
     private static ReportWatcher watcher;
     private static final File folder = new File("src/test/resources");
