@@ -53,8 +53,10 @@ public class AstraiaTestReportApp {
 
         while (folder.isBlank() || !isValidPath) {
             System.out.print("Please enter " + folderType + " folder location: ");
-            folder = scanner.next();
-            isValidPath = isValidPath(folder);
+            if(scanner.hasNext()) {
+                folder = scanner.next();
+                isValidPath = isValidPath(folder);
+            }
         }
         return folder;
     }
