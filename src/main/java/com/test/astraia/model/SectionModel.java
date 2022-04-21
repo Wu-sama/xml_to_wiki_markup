@@ -1,9 +1,6 @@
 package com.test.astraia.model;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import static com.test.astraia.utils.FormattingUtils.collectionToString;
 
 public class SectionModel {
     private List<Object> content;
@@ -17,13 +14,6 @@ public class SectionModel {
         this.content = content;
     }
 
-    public void addContent(Object object) {
-        if (content == null) {
-            this.content = new ArrayList<>();
-        }
-        content.add(object);
-    }
-
     public void setHeading(int order, String heading) {
         this.heading = new Heading(heading, order);
     }
@@ -32,12 +22,17 @@ public class SectionModel {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         if (heading != null) {
+            builder.append(Constants.LINE_DELIMITER);
             builder.append(heading);
             builder.append(Constants.LINE_DELIMITER);
-
         }
         if (content != null) {
-            builder.append(collectionToString(content,Constants.LINE_DELIMITER));
+            for (int i = 0; i < content.size(); i++) {
+                if (i % 2 == 0) {
+                    builder.append(Constants.LINE_DELIMITER);
+                }
+                builder.append(content.get(i).toString());
+            }
         }
         return builder.toString();
     }

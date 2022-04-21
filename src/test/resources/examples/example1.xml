@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <report>
-	The text can start outside a section.... 
+	The text can start outside a section....
 	
 	<section heading="Build 1234">
 		<section heading="Api component">
@@ -14,8 +14,7 @@
 				Test performed on the different databases
 				<section heading="Sybase">
 					<section heading="Preparing DB">
-						Done in
-						<italic>1556ms</italic>
+						Done in <italic>1556ms</italic>
 					</section>
 					<section heading="JUnits">
 						<section heading="com.astraia.api.data">

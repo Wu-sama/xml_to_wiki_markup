@@ -11,7 +11,6 @@ import java.nio.file.WatchEvent;
 import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class ReportWatcher implements Runnable {
@@ -72,21 +71,8 @@ public class ReportWatcher implements Runnable {
         return this;
     }
 
-    public ReportWatcher removeListener(FileListener listener) {
-        listeners.remove(listener);
-        return this;
-    }
-
-    public List<FileListener> getListeners() {
-        return listeners;
-    }
-
     public ReportWatcher setListeners(List<FileListener> listeners) {
         this.listeners = listeners;
         return this;
-    }
-
-    public static List<WatchService> getWatchServices() {
-        return Collections.unmodifiableList(watchServices);
     }
 }

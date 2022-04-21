@@ -16,15 +16,8 @@ public class ReportModel {
         this.content = content;
     }
 
-    public void addContent(Object object) {
-        if (content == null) {
-            this.content = new ArrayList<>();
-        }
-        content.add(object);
-    }
-
     @Override
     public String toString() {
-        return collectionToString(content, Constants.LINE_DELIMITER);
+        return collectionToString(content, Constants.LINE_DELIMITER).replaceAll("\n\n\n|\n\n", "\n");
     }
 }

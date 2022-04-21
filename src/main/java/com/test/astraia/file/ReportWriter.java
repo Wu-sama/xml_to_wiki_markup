@@ -11,6 +11,7 @@ public class ReportWriter {
     public Path write(String path, String fileName, String content) throws IOException {
         Path file = Paths.get(path, fileName);
         Files.write(file, Collections.singleton(content), StandardCharsets.UTF_8);
+        System.out.println("Created file " + fileName);
         return file;
     }
 }

@@ -14,6 +14,7 @@ public class ReportAdapter implements FileListener {
     public ReportAdapter(){
         this.reportService = new ReportService();
     }
+
     @Override
     public void onCreated(FileEvent event) {
         File file = event.getFile();

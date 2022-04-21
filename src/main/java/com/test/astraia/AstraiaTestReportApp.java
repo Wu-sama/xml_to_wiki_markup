@@ -25,7 +25,7 @@ public class AstraiaTestReportApp {
             readAndFormatPreviouslyCreatedFiles(folder, reportAdapter);
             configureReportCreationWatcher(folder, reportAdapter);
 
-            System.out.print("For end input exit");
+            System.out.print("For end input exit: ");
             while (!"exit".equals(scanner.next())) {
             }
         }
@@ -51,7 +51,7 @@ public class AstraiaTestReportApp {
         String folder = "";
         boolean isValidPath = false;
 
-        while (folder.isBlank() || isValidPath) {
+        while (folder.isBlank() || !isValidPath) {
             System.out.print("Please enter " + folderType + " folder location: ");
             folder = scanner.next();
             isValidPath = isValidPath(folder);

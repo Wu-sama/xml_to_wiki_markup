@@ -36,7 +36,6 @@ class WikiReportServiceTest {
 
         Assertions.assertEquals("=Heading 1=\n" +
                 "==Heading 2==\n" +
-                "\n" +
                 "=Heading 1=\n" +
                 "==Heading 2==\n"
                 , result);
