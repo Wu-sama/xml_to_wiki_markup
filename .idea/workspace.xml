@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22acdeaa-5d4c-4e41-b7fa-32eefeabaf7d" name="Changes" comment="read new file from directory">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/file/FileAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/file/FileEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/file/FileListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/file/ReportWatcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/test/astraia/file/ReportWatcherTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/astraia/AstraiaTestReportApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/AstraiaTestReportApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/astraia/file/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/file/ReportReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/astraia/file/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/astraia/file/ReportWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/test/astraia/FileReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/test/astraia/file/FileReaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/test/astraia/FileWriterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/test/astraia/file/ReportWriterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +124,16 @@
       <recent name="com.test.astraia" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ReportWriterTest.write">
+  <component name="RunManager" selected="Application.Report">
+    <configuration name="Report" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.test.astraia.AstraiaTestReportApp" />
+      <module name="astraia.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FileReaderTest.readFile" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -250,6 +249,14 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.Report" />
+      <item itemvalue="Gradle.FileWriterTest.write" />
+      <item itemvalue="Gradle.ReportWatcherTest.createFile" />
+      <item itemvalue="Gradle.ReportWatcherTest.test" />
+      <item itemvalue="Gradle.ReportWriterTest.write" />
+      <item itemvalue="Gradle.FileReaderTest.readFile" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.ReportWriterTest.write" />

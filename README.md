@@ -9,11 +9,6 @@ This application was written for Astraia interview with using Java 17, Gradle, J
 Build with gradle tool if necessary. Configure an Application by InteliJ tool, specify main
 class (```com.test.astraia.AstraiaTestReportApp```)
 
-### Command line
-
-To build jar run ```./gradlew build``` task from project directory. To run user command ```java -jar astraia.jar```
-from folder build/libs.
-
 <details><summary>And follow instruction</summary>
 <p>
 Input source folder with xml files
