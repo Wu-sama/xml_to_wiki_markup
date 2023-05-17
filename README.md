@@ -1,13 +1,14 @@
 # Read me
 
-This application was written for Astraia interview with using Java 17, Gradle, JAX2B, Junit by Elizaveta Stoliarova
+This application was written with using Java 17, Gradle, JAX2B, Junit by Elizaveta Stoliarova
+The task is to develop a Java application that transforms XML files containing build reports into Wiki Markup formatted files, which can be imported into an internal wiki. The application should run as a service, monitoring an input folder for new XML files and generating corresponding Wiki Markup files in an output folder. The input and output folders should be specified as command-line arguments.
 
 ## How to start
 
 ### IDE
 
 Build with gradle tool if necessary. Configure an Application by InteliJ tool, specify main
-class (```com.test.astraia.AstraiaTestReportApp```)
+class (```com.test.wiki.markup.wiki.markupTestReportApp```)
 
 <details><summary>And follow instruction</summary>
 <p>

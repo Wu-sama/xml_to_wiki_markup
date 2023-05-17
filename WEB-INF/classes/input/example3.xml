@@ -6,7 +6,7 @@
 		<section heading="Api component">
 			<bold>Date: <italic>01.04.2015</italic></bold>
 			<section heading="Main">
-				<section heading="astraia.jar">
+				<section heading="wiki.markup.jar">
 					<italic>Built in <bold>512ms</bold></italic>
 				</section>
 			</section>
@@ -18,7 +18,7 @@
 						<italic>1556ms</italic>
 					</section>
 					<section heading="JUnits">
-						<section heading="com.astraia.api.data">
+						<section heading="com.wiki.markup.api.data">
 							<bold>Passed:</bold> 5 passed!
 							<bold>Failed:</bold> 1 failed!
 							<section heading="failed tests">

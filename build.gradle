@@ -41,7 +41,7 @@ task jaxb {
         ant.jaxbTargetDir = jaxbTargetDir
         ant.xjc(
                 destdir: '${jaxbTargetDir}',
-                package: 'com.test.astraia.model.xsd',
+                package: 'com.test.wiki.markup.model.xsd',
                 schema: 'src/main/resources/xsd/report.xsd'
         )
     }
@@ -54,7 +54,7 @@ compileJava.dependsOn jaxb
 jar {
     manifest {
         attributes(
-                'Main-Class': 'com.test.astraia.AstraiaTestReportApp'
+                'Main-Class': 'com.test.wiki.markup.wiki.markupTestReportApp'
         )
     }
 }

@@ -3,7 +3,7 @@ The text can start outside a section....
 ==Api component==
 '''Date: ''01.04.2015'''''
 ===Main===
-====astraia.jar====
+====wiki.markup.jar====
 ''Built in '''512ms'''''
 ===Test===
 Test performed on the different databases
@@ -11,6 +11,6 @@ Test performed on the different databases
 =====Preparing DB=====
 Done in ''1556ms''
 =====JUnits=====
-======com.astraia.api.data======
+======com.wiki.markup.api.data======
 '''Passed:''' All passed!
 '''Failed:''' None
